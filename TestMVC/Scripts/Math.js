@@ -1,7 +1,9 @@
 ﻿/*
  * A class that represents a math library.
  */
-(function Math() {
+WebEssentials.createNamespace("WebEssentials.Math");
+
+WebEssentials.Math = (function Math() {
     Math.prototype.add = function (num1, num2) {
         return num1 + num2;
     }

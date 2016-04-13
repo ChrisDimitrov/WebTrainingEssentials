@@ -26,6 +26,10 @@ body {
     width: 220px;
 }
 
+#clear-button {
+    width: 217px
+}
+
 #keypad, #input, #output {
     font-size: 20px;
 }

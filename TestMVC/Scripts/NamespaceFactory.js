@@ -1,4 +1,6 @@
-﻿(function () {
+﻿var WebEssentials = WebEssentials || {};
+
+WebEssentials.createNamespace = function () {
     function createNamespace(namespace) {
         var nsparts = namespace.split(".");
         var parent = StepTracker;
@@ -24,4 +26,4 @@
         // we return the outermost namespace
         return parent;
     }
-})();
+};
