@@ -1,0 +1,12 @@
+﻿label {
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+
+#userInfo, #userInfo2 input[type=text] {
+  display: inline-block;
+  float: left;
+}
