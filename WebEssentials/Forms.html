@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-2.2.3.js"></script>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div class="form-group">
+        Submiting a form through normal input.
+        <form id="userInfo">
+            Name:
+            <input type="text" name="name" required />
+            <br />
+            Age:
+            <input type="text" name="age" placeholder="" required />
+            <br />
+            E-mail:
+            <input type="text" name="email" placeholder="Please enter a valid e-mail." required />
+
+            <input type="submit" />
+        </form>
+    </div>
+
+    <br />
+
+    Submit a form with jQuery.
+    <div class="form-group">
+        <form id="userInfo2">
+            Name:
+            <input type="text" name="name" placeholder="Enter your first name." required />
+            <br />
+            Age:
+            <input type="text" name="age" placeholder="Enter your age." required />
+            <br />
+            E-mail:
+            <input type="text" name="email" placeholder="Please enter a valid e-mail." required />
+
+            <button id="submit-button">Submit</button>
+            <button id="serialize-button">Serialize</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        // Attach event handlers properly.
+        $("#submit-button").off("click").on("click", submitForm);
+        $("#serialize-button").off("click").on("click", submitForm);
+
+        function submitForm() {
+            $("#submit-button").submit();
+        }
+
+        function serializeForm() {
+            debugger;
+            var formData = $("#userInfo2").serialize();
+            var data = decodeURIComponent(formData);
+        }
+    })
+</script>
