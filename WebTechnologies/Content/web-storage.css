@@ -1,0 +1,14 @@
+﻿/* Style for the WebStorage API section. */
+
+label {
+    width: 120px;
+    float: left;
+}
+
+form {
+    padding-top: 10px;
+}
+
+#local-action-buttons, #session-action-buttons {
+    margin-top: 10px;
+}

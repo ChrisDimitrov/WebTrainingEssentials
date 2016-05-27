@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "JavaScript";
+}
+
+<link rel="stylesheet" href="~/Content/web-storage.css" />
+
+<script src="~/Scripts/Training/local-storage.js"></script>
+<script src="~/Scripts/Training/session-storage.js"></script>
+<script src="~/Scripts/Training/objects.js"></script>
+
+<h2>WebStorage API </h2>
+<p>
+    In many scenarios we might need to store simple, non-sensitive data in our browsers.
+    In this lesson we will show how to achieve this through the WebStorage API.
+</p>
+
+<br />
+
+<form id="local-storage-test">
+    <fieldset>
+        <legend>Local Storage</legend>
+
+        <p>
+            Local storage is an ideal solution if we want to store simple key-value data 
+            that is often too large to be stored in HTTP cookies.
+            We must bear in mind that the data is shared across all open isntances/windows and is 
+            not deleted on close - we have to do the cleanup ourselves.
+        </p>
+
+        <label>Key: </label><input type="text" id="key" placeholder="Enter key." /> <br />
+        <label>First Name: </label> <input type="text" id="first-name" placeholder="Enter first name." /> <br />
+        <label>Last Name: </label> <input type="text" id="last-name" placeholder="Enter last name." /> <br />
+        <label>Age: </label> <input type="text" id="age" placeholder="Enter age." /> <br />
+
+        <div id="local-action-buttons">
+            <input type="button" id="storage-store" value="Store" />
+            <input type="button" id="storage-read" value="Read" />
+            <input type="button" id="storage-clear" value="Clear" />
+        </div>
+    </fieldset>
+</form>
+
+<form id="session-storage-test">
+    <fieldset>
+        <legend>Session Storage</legend>
+
+        <p>
+            Session storage is similar to local storage with the crucial difference
+            that after we close the window/session, the data is automatically deleted.
+        </p>
+
+        <label>Key: </label><input type="text" id="key-session" placeholder="Enter key." /> <br />
+        <label>First Name: </label> <input type="text" id="first-name-session" placeholder="Enter first name." /> <br />
+        <label>Last Name: </label> <input type="text" id="last-name-session" placeholder="Enter last name." /> <br />
+        <label>Age: </label> <input type="text" id="age-session" placeholder="Enter age." /> <br />
+
+        <div id="session-action-buttons">
+            <input type="button" id="session-storage-store" value="Store" />
+            <input type="button" id="session-storage-read" value="Read" />
+            <input type="button" id="session-storage-clear" value="Clear" />
+        </div>
+    </fieldset>
+
+    <br />
+
+    <style>
+        table, th, td {
+            border: 1px solid black
+        }
+    </style>
+
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>Sci-Fi</td>
+            <td>Movie1</td>
+        </tr>
+    </table>
+</form>
+
+<script>
+    $(document).ready(function () {
+        WebEssentials.LocalStorage.init();
+        WebEssentials.SessionStorage.init();
+
+        windows.addEventListener("storage", function (e) {
+            alert("Value of " + e.newValue + " was added.");
+        }, false);
+    });
+</script>
+

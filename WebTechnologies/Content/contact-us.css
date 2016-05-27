@@ -1,0 +1,9 @@
+﻿label {
+    clear: both;
+    display: block;
+    float: left;
+    width: 125px;
+    height: 12px;
+    vertical-align: bottom;
+    padding: 10px;
+}

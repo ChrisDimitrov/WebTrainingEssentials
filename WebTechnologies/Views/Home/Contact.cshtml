@@ -1,6 +1,9 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
+
+<link rel="stylesheet" href="~/Content/contact-us.css" />
+
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
@@ -15,3 +18,18 @@
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+
+<div class="form-group-sm">
+    <form id="contact-us">
+        <label>Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name." required />
+
+        <label>E-mail:</label>
+        <input type="text" id="name" name="name" placeholder="Your e-mail." required />
+
+        <label>Message:</label>
+        <input type="text" placeholder="Type us a message." required />
+
+        <input type="submit" />
+    </form>
+</div>

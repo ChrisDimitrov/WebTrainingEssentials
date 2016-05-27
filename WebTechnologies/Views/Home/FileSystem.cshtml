@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "FileSystem";
+}
+
+<link href="~/Content/file-system.css" rel="stylesheet" />
+<script src="~/Scripts/Training/web-essentials.js"></script>
+<script src="~/Scripts/Training/file-system.js"></script>
+
+<h2>FileSystem API</h2>
+<p>
+    In many scenarios we might need to store simple, non-sensitive data in our browsers.
+    In this lesson we will show how to achieve this through the WebStorage API.
+</p>
+
+<br />
+
+<form id="file-system-test">
+    <fieldset>
+        <legend>File System</legend>
+
+        <p>
+            Local storage is an ideal solution if we want to store simple key-value data
+            that is often too large to be stored in HTTP cookies.
+            We must bear in mind that the data is shared across all open isntances/windows and is
+            not deleted on close - we have to do the cleanup ourselves.
+        </p>
+
+        <label>File Name: </label><input type="text" id="file-name" placeholder="Enter file name." /> <br />
+        <label>Size: </label> <input type="text" id="file-size" placeholder="Enter file size." /> <br />
+        <label>Data: </label> <input type="text" id="file-data" placeholder="Enter data to store." /> <br />
+
+        <div id="action-buttons">
+            <input type="button" id="file-open" value="Open" />
+            <input type="button" id="file-write" value="Write" />
+            <input type="button" id="file-read" value="Read" />
+        </div>
+    </fieldset>
+</form>
+
+<script>
+    $(document).ready(function () {
+        WebEssentials.FileSystem.init();
+    });
+</script>
+

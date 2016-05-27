@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Geolocation API";
+}
+
+<style>
+    label {
+        width: 120px;
+    }
+</style>
+
+<script src="~/Scripts/Training/geolocation.js"></script>
+
+<h2>Geolocation</h2>
+
+<p>
+    Test the built-in Geolocation API.
+</p>
+
+<br />
+
+<div id="coordinates-container">
+    <div id="location-timestamp">
+        <label>Timestamp:</label><div id="timestamp"></div><br />
+    </div>
+    <div id="latitude-coordinate">
+        <label>Latitude:</label><div id="latitude"></div><br />
+    </div>
+    <div id="longitude-coordinate">
+        <label>Longitude:</label><div id="longitude"></div><br />
+    </div>
+    <div id="speed">
+        <label>Speed:</label><div id="speed"></div><br />
+    </div>
+</div>
+
+<input type="button" id="get-location-button" value="Get Location" />
+
+<script>
+    $(document).ready(function () {
+        WebEssentials.Geolocation.init();
+    });
+</script>
+

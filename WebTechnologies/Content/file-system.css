@@ -1,0 +1,12 @@
+﻿label {
+    width: 120px;
+    float: left;
+}
+
+form {
+    padding-top: 10px;
+}
+
+#action-buttons {
+    margin-top: 10px;
+}

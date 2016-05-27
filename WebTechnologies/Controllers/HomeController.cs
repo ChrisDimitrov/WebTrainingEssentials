@@ -26,5 +26,25 @@ namespace WebTechnologies.Controllers
 
             return View();
         }
+
+        public ActionResult JavaScript()
+        {
+            return View();
+        }
+
+        public ActionResult FileSystem()
+        {
+            return View();
+        }
+
+        public ActionResult Geolocation()
+        {
+            return View();
+        }
+
+        public ActionResult JavaScriptObjects()
+        {
+            return View();
+        }
     }
 }

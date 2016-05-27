@@ -8,7 +8,8 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-
+    @Scripts.Render("~/bundles/web-essentials")
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,15 +22,32 @@
                 </button>
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Forms", "Forms", "Html5")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                HTML5
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Forms", "Forms", "Html5")</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                JavaScript
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Objects", "JavaScriptObjects", "Home")</li>
+                                <li>@Html.ActionLink("Web Storage", "JavaScript", "Home")</li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("FileSystem", "FileSystem", "Home")</li>
+                        <li>@Html.ActionLink("Geolocation", "Geolocation", "Home")</li>
+                    </ul>
+                </div>
         </div>
     </div>
     <div class="container body-content">
